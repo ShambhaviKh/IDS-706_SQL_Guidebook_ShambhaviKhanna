@@ -1,4 +1,4 @@
-# SQL Reference Guide: Restaurant Orders Database
+# SQL Reference Guide
 
 ## Table of Contents
 
@@ -15,9 +15,16 @@
 
 ## Overview
 
-This project is a **personal SQL reference guide** created to demonstrate and document advanced SQL concepts using a restaurant orders dataset.  
-It covers table creation, data insertion, data cleaning, joins, aggregation, window functions, CTEs, and other advanced SQL operations.  
-The guide is intended as a reusable resource for **interview preparation** and **data analytics practice**.
+his project demonstrates key SQL concepts and advanced query techniques through a restaurant order management example.  
+It serves as a **personalized SQL reference guide** for interview preparation and real-world data tasks.
+
+You will find examples of:
+- Table creation, insertion, and updates  
+- Joins and aggregations  
+- Data cleaning and transformation  
+- Common Table Expressions (CTEs)  
+- Window functions like `RANK()` and `LAG()`  
+- Custom queries combining multiple SQL features  
 
 ---
 
@@ -41,16 +48,9 @@ sqlite3 --version
 
 ## Dataset used
 
-Description:
-This synthetic dataset contains 500 restaurant order records for beginners to practice data analysis and visualization. Generated using Python’s faker library, it contains no real customer information.
-
-Columns:
-Order ID, Customer Name, Food Item, Category, Quantity, Price, Payment Method, Order Time.
-
-Use Cases:
-EDA, data cleaning, visualization, and SQL practice. Explore trends like top-selling items, busiest order times, and preferred payment methods.
-
-Modified the database according to our guidebook
+A reference Kaggle restaurant dataset was reviewed for structure and logic inspiration.
+However, the tables and data in this project were created manually using the reference as a guide.
+This approach demonstrates how to design and populate relational databases independently while maintaining realistic data patterns.
 
 ## 📝 SQL Operations and Questions Covered
 

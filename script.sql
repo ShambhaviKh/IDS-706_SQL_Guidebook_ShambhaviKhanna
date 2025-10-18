@@ -2,6 +2,7 @@
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Customers;
 DROP TABLE IF EXISTS MenuItems;
+DROP TABLE IF EXISTS Staff;
 
 -- === Customers ===
 CREATE TABLE Customers (
@@ -21,12 +22,20 @@ CREATE TABLE Orders (
     order_id INTEGER PRIMARY KEY,
     customer_id INTEGER,
     item_id INTEGER,
+    staff_id INTEGER,
     quantity INTEGER,
     unit_price REAL,           -- this column must exist
     payment_method TEXT,
     order_time TEXT,
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
     FOREIGN KEY (item_id) REFERENCES MenuItems(item_id)
+);
+-- === Staff ===
+CREATE TABLE Staff (
+    staff_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    staff_name TEXT NOT NULL,
+    role TEXT,
+    hire_date TEXT
 );
 
 INSERT INTO Customers (customer_name)
@@ -50,17 +59,26 @@ VALUES
 ('Brownie', 'Dessert'),
 ('Soup', 'Starter');
 
-INSERT INTO Orders (order_id, customer_id, item_id, quantity, unit_price, payment_method, order_time)
+INSERT INTO Orders (order_id, customer_id, item_id, staff_id, quantity, unit_price, payment_method, order_time)
 VALUES
-(2268, 1, 1, 5, 16.52, 'Cash', '2025-02-02 14:28:41'),
-(3082, 2, 5, 4, 17.27, 'Debit Card', '2025-06-08 10:57:47'),
-(3160, 3, 1, 1, 3.37, 'Credit Card', '2025-03-04 07:41:41'),
-(1272, 4, 1, 5, 2.20, 'Online Payment', '2025-05-15 12:43:45'),
-(9447, 5, 6, 1, 12.23, 'Cash', '2025-03-15 14:25:56'),
-(1587, 6, 5, 5, 7.39, 'Credit Card', '2025-04-12 05:49:18'),
-(8018, 7, 5, 5, 11.79, 'Debit Card', '2025-04-28 08:09:19'),
-(5409, 8, 4, 5, 4.77, 'Cash', '2025-04-28 08:32:14'),
-(2857, 9, 2, 4, 4.72, 'Debit Card', '2025-04-22 19:43:14');
+(2268, 1, 1, 3, 5, 16.52, 'Cash', '2025-02-02 14:28:41'),
+(3082, 2, 5, 4, 4, 17.27, 'Debit Card', '2025-06-08 10:57:47'),
+(3160, 3, 1, 6, 1, 3.37, 'Credit Card', '2025-03-04 07:41:41'),
+(1272, 4, 1, 2, 5, 2.20, 'Online Payment', '2025-05-15 12:43:45'),
+(9447, 5, 6, 1, 1, 12.23, 'Cash', '2025-03-15 14:25:56'),
+(1587, 6, 5, 1, 5, 7.39, 'Credit Card', '2025-04-12 05:49:18'),
+(8018, 7, 5, 3, 5, 11.79, 'Debit Card', '2025-04-28 08:09:19'),
+(5409, 8, 4, 4, 5, 4.77, 'Cash', '2025-04-28 08:32:14'),
+(2857, 9, 2, 6, 4, 4.72, 'Debit Card', '2025-04-22 19:43:14');
+
+INSERT INTO Staff (staff_name, role, hire_date)
+VALUES
+('Alice Johnson', 'Server', '2023-01-10'),
+('David Clark', 'Cashier', '2022-11-05'),
+('Emma Banks', 'Cashier', '2024-03-15'),
+('James Smith', 'Manager', '2020-07-20'),
+('Olivia Brown', 'Chef', '2020-09-30'),
+('Nina Patel', 'Server', '2024-02-22');
 
 -- Update an order price
 UPDATE Orders
@@ -197,4 +215,22 @@ SELECT
 FROM spending
 WHERE COALESCE(total_spent, 0) <= 50
 ORDER BY spend_category DESC, total_spent DESC;
+
+-- Revenue generated per staff member
+SELECT
+  s.staff_name,
+  ROUND(SUM(o.quantity * o.unit_price), 2) AS total_revenue_generated
+FROM Orders o
+JOIN Staff s ON o.staff_id = s.staff_id
+GROUP BY s.staff_name
+ORDER BY total_revenue_generated DESC;
+
+--Longest-serving staff (based on hire_date)
+SELECT
+  staff_name,
+  role,
+  hire_date
+FROM Staff
+ORDER BY hire_date ASC
+LIMIT 1
 
