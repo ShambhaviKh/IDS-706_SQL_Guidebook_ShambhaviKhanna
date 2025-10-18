@@ -201,41 +201,6 @@ sqlite3 restro.db
 ```sql
 .read script.sql
 ```
-## Relational Database 
-
-Customers
------------
-customer_id (PK)
-customer_name
-        |
-        |  (customer_id in Orders)
-        v
-
-Orders
------------
-order_id (PK)
-customer_id
-menu_item_id
-quantity
-order_date
-        |
-        |  (menu_item_id in MenuItems)
-        v
-
-MenuItems
------------
-menu_item_id (PK)
-food_item
-category
-
-
-Staff
------------
-staff_id (PK)
-staff_name
-role
-hire_date
-
 
 ## Output Snippets
 
