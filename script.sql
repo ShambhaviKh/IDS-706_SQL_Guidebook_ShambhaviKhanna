@@ -188,3 +188,4 @@ SELECT
 FROM spending
 WHERE COALESCE(total_spent, 0) <= 50
 ORDER BY spend_category DESC, total_spent DESC;
+
