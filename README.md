@@ -191,7 +191,7 @@ Each entry explains the **operation**, **SQL command used**, **description**, an
 
 ## How to Run
 
-1. Save all SQL statements to a file named `restaurant_project.sql`.  
+1. Save all SQL statements to a file named `script.sql`.  
 2. Open SQLite by running the following command in your terminal:
 
 ```bash
@@ -199,7 +199,7 @@ sqlite3 restro.db
 ```
 3. Execute the SQL script inside SQLite:
 ```sql
-.read restaurant_project.sql
+.read script.sql
 ```
 
 ## Output Snippets
