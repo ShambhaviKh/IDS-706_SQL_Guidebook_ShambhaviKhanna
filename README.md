@@ -50,7 +50,7 @@ Order ID, Customer Name, Food Item, Category, Quantity, Price, Payment Method, O
 Use Cases:
 EDA, data cleaning, visualization, and SQL practice. Explore trends like top-selling items, busiest order times, and preferred payment methods.
 
-Modified the database accoridng to our guidebook
+Modified the database according to our guidebook
 
 ## 📝 SQL Operations and Questions Covered
 
@@ -112,9 +112,9 @@ sqlite3 restro.db
 
 ## Conclusion
 
-This project demonstrates core and advanced SQL techniques in a realistic restaurant orders scenario.
-It serves as a reference guide for interview preparation, SQL practice, and small-scale analytics projects.
-Designed normalized tables with relationships
-Practiced aggregate functions, joins, window functions, and CTEs
-Performed data cleaning and transformation
-Created a reusable SQL reference guide for future use
+1. This project demonstrates core and advanced SQL techniques in a realistic restaurant orders scenario.
+2. It serves as a reference guide for interview preparation, SQL practice, and small-scale analytics projects.
+3. Designed normalized tables with relationships
+4. Practiced aggregate functions, joins, window functions, and CTEs
+5. Performed data cleaning and transformation
+6. Created a reusable SQL reference guide for future use

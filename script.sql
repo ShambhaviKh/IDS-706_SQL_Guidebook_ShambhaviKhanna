@@ -36,22 +36,31 @@ VALUES
 ('Margaret Wells'),
 ('Michael Matthews'),
 ('Connor Williams'),
-('Matthew Miles');
+('Matthew Miles'),
+('Johnny Dennis'),
+('Heidi Boyle'),
+('Aaron Bruce');
 
 INSERT INTO MenuItems (food_item, category)
 VALUES
 ('Pasta', 'Main'),
+('Salad', 'Starter'),
+('Burger', 'Main'),
+('Ice Cream', 'Dessert'),
 ('Brownie', 'Dessert'),
 ('Soup', 'Starter');
 
 INSERT INTO Orders (order_id, customer_id, item_id, quantity, unit_price, payment_method, order_time)
 VALUES
 (2268, 1, 1, 5, 16.52, 'Cash', '2025-02-02 14:28:41'),
-(3082, 2, 2, 4, 17.27, 'Debit Card', '2025-06-08 10:57:47'),
+(3082, 2, 5, 4, 17.27, 'Debit Card', '2025-06-08 10:57:47'),
 (3160, 3, 1, 1, 3.37, 'Credit Card', '2025-03-04 07:41:41'),
 (1272, 4, 1, 5, 2.20, 'Online Payment', '2025-05-15 12:43:45'),
-(9447, 5, 3, 1, 12.23, 'Cash', '2025-03-15 14:25:56'),
-(1587, 6, 2, 5, 7.39, 'Credit Card', '2025-04-12 05:49:18');
+(9447, 5, 6, 1, 12.23, 'Cash', '2025-03-15 14:25:56'),
+(1587, 6, 5, 5, 7.39, 'Credit Card', '2025-04-12 05:49:18'),
+(8018, 7, 5, 5, 11.79, 'Debit Card', '2025-04-28 08:09:19'),
+(5409, 8, 4, 5, 4.77, 'Cash', '2025-04-28 08:32:14'),
+(2857, 9, 2, 4, 4.72, 'Debit Card', '2025-04-22 19:43:14');
 
 -- Update an order price
 UPDATE Orders
