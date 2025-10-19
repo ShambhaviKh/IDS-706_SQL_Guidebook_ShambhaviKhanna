@@ -57,6 +57,8 @@ This approach demonstrates how to design and populate relational databases indep
 
 ## Database Schema
 
+![Database schema](images_op/schema.png)
+
 There are four tables in our restaurant database management system. 
 
 The Orders table acts as the central link, establishing a one-to-many relationship with Customers, MenuItems, and Staff.
