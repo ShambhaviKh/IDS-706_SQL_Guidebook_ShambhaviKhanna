@@ -223,6 +223,8 @@ sqlite3 restro.db
 
 ## Output Snippets
 
+Following are the tables created- 
+
 1. ![Customer Table](images_op/cust_table.png)
 
 ---
