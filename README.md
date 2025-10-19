@@ -6,16 +6,17 @@
 2. [Why This Project](#why-this-project)  
 3. [SQLite Version Check](#sqlite-version-check)  
 4. [Dataset Used](#dataset-used)   
-5. [SQL Operations and Questions Covered](#sql-operations-and-questions-covered)  
-6. [How to Run](#how-to-run)  
-7. [Outputs](#output-snippets)
-8. [Conclusion](#conclusion)  
+5. [Database schema](#database-schema)  
+6. [SQL Operations and Questions Covered](#sql-operations-and-questions-covered)  
+7. [How to Run](#how-to-run)  
+8. [Outputs](#output-snippets)
+9. [Conclusion](#conclusion)  
 
 ---
 
 ## Overview
 
-his project demonstrates key SQL concepts and advanced query techniques through a restaurant order management example.  
+This project demonstrates key SQL concepts and advanced query techniques through a restaurant order management example.  
 It serves as a **personalized SQL reference guide** for interview preparation and real-world data tasks.
 
 You will find examples of:
