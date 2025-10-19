@@ -48,9 +48,27 @@ sqlite3 --version
 
 ## Dataset used
 
-A reference Kaggle restaurant dataset was reviewed for structure and logic inspiration.
+A reference Kaggle restaurant dataset was reviewed (https://www.kaggle.com/datasets/haseebindata/restaurant-orders) for structure and logic inspiration.
 However, the tables and data in this project were created manually using the reference as a guide.
 This approach demonstrates how to design and populate relational databases independently while maintaining realistic data patterns.
+
+---
+
+## Database Schema
+
+There are four tables in our restaurant database management system. 
+
+The Orders table acts as the central link, establishing a one-to-many relationship with Customers, MenuItems, and Staff.
+
+The Orders table is central, as it holds Foreign Keys (FKs) to the other three tables:
+
+1. Orders.customer_id relates to Customers.customer_id (A customer places an order).
+
+2. Orders.item_id relates to MenuItems.item_id (The order contains one menu item).
+
+3. Orders.staff_id relates to Staff.staff_id (A staff member took the order).
+
+---
 
 ## SQL Operations and Questions Covered
 
@@ -201,10 +219,40 @@ sqlite3 restro.db
 ```sql
 .read script.sql
 ```
+---
 
 ## Output Snippets
 
+1. ![Customer Table](images_op/cust_table.png)
 
+---
+
+2. ![Orders Table](images_op/order_table.png)
+
+---
+
+3. ![Menu Items Table](images_op/menuitems_table.png)
+
+---
+
+4. ![Staff Table](images_op/staff_table.png)
+
+---
+
+5. Code and outputs of the code- 
+
+![Image 1](images_op/1.png)
+![Image 2](images_op/2.png)
+![Image 3](images_op/3.png)
+![Image 4](images_op/4.png)
+![Image 5](images_op/5.png)
+![Image 6](images_op/6.png)
+![Image 7](images_op/7.png)
+![Image 8](images_op/8.png)
+![Image 9](images_op/9.png)
+![Image 10](images_op/10.png)
+
+---
 
 ## Conclusion
 

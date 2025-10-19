@@ -7,7 +7,8 @@ DROP TABLE IF EXISTS Staff;
 -- === Customers ===
 CREATE TABLE Customers (
     customer_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    customer_name TEXT NOT NULL
+    customer_name TEXT NOT NULL,
+    contact CHAR(10)
 );
 
 -- === Menu items ===
@@ -38,17 +39,17 @@ CREATE TABLE Staff (
     hire_date TEXT
 );
 
-INSERT INTO Customers (customer_name)
+INSERT INTO Customers (customer_name, contact)
 VALUES 
-('Mary Vega DDS'),
-('Brandon Myers'),
-('Margaret Wells'),
-('Michael Matthews'),
-('Connor Williams'),
-('Matthew Miles'),
-('Johnny Dennis'),
-('Heidi Boyle'),
-('Aaron Bruce');
+('Mary Vega DDS', '9192345678'),
+('Brandon Myers', '9293465789'),
+('Margaret Wells', ' 9512364789'),
+('Michael Matthews', '9342364459'),
+('Connor Williams', '8991456788'),
+('Matthew Miles', '7722346789'),
+('Johnny Dennis', '4327182345'),
+('Heidi Boyle', '2123467890'),
+('Aaron Bruce', '9198765432');
 
 INSERT INTO MenuItems (food_item, category)
 VALUES
